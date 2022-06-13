@@ -9,7 +9,7 @@
         hostname: "{{ inventory_hostname }}"
         username: "{{ username }}"
         password: "{{ password }}"
-        tenant: "NB.BOS"
+        tenant: "NB.NYC"
         entry: "TCP9000"
         filter: "Web-Demo"
         state: present
