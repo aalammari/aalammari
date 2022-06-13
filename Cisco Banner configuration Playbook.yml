@@ -1,6 +1,6 @@
 ---
 
-- hosts: 1841_TEST
+- hosts: US-NYC-SW1
   gather_facts: no
   tasks:
   - name: Configure Login Banner
@@ -8,7 +8,7 @@
       banner: login
       text: |
         *******************************************************************************
-        *          This system is a private computer/communication facility           *
+        *          This system is a private computer/communication facility for POC   *
         *                     Access is for authorized users only!                    *
         * Individuals using this computer system without authority, or in excess of   *
         * their authority, are subject to having all of their activities on this      *
@@ -27,7 +27,7 @@
       banner: motd
       text: |
         ****************************************************************************
-        *                This is a BCN Networks managed device                     *
+        *                This is a BCN Networks managed device for POC             *
         *                                                                          *
         * Changes to the device configuration should be authorized through the     *
         * processes outlined by the ITS Network Services team.                     *
