@@ -27,7 +27,7 @@
       banner: motd
       text: |
         ****************************************************************************
-        *                This is a BCN Networks managed device for POC             *
+        *                This is a NetBrain Technologies managed device for POC    *
         *                                                                          *
         * Changes to the device configuration should be authorized through the     *
         * processes outlined by the ITS Network Services team.                     *
