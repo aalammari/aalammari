@@ -13,7 +13,7 @@
         entry: "TCP9000"
         filter: "Web-Demo"
         state: present
-        use_ssl: no
+        use_ssl: yes
         dst_port: "9000"
         ether_type: ip
         ip_protocol: tcp
