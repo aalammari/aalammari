@@ -2,7 +2,7 @@
 #Ansible Playbook to downgrade Cisco IOS
 
 - name: Downgrade CISCO IOS
-  hosts: 1841_TEST
+  hosts: CM_USECASE
 
   vars:
     downgrade_ios_version: 12.4(24)T
@@ -44,7 +44,7 @@
 
 ## Backup Running Config
 
-- hosts: 1841_TEST
+- hosts: CM_USECASE
 
   tasks:
 ##   - name: Backup Running Config
