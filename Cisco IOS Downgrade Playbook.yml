@@ -5,7 +5,7 @@
   hosts: CM_USECASE
 
   vars:
-    downgrade_ios_version: 12.4(24)T
+    downgrade_ios_version: 17.02.03
 
   tasks:
     - name: CHECK CURRENT VERSION
@@ -14,7 +14,7 @@
     - debug:
         msg:
         - "Current version is {{ ansible_net_version }}"
-        - "Downgrade image is 12.4.24-T"
+        - "Downgrade image is 17.02.03"
 
     - debug:
         msg:
@@ -74,9 +74,9 @@
 ##         - 'Source filename'
 ##         - 'Destination filename'
 ##       answer:
-##         - '10.10.2.243'
-##         - 'c1841-advipservicesk9-mz.151-4.M9.bin'
-##         - 'c1841-advipservicesk9-mz.151-4.M9.bin'
+##         - '172.16.11.242'
+##         - 'csr1000v-mono-universalk9.17.02.03.SPA.bin'
+##         - 'csr1000v-mono-universalk9.17.02.03.SPA-TEST22.bin'
 ##     vars:
 ##       ansible_command_timeout: 1200
 
@@ -85,21 +85,21 @@
    - name: Change Boot Variable to the new image
      ios_config:
        commands:
-         - "no boot system flash c1841-advipservicesk9-mz.151-4.M9.bin"
-         - "boot system flash c1841-adventerprisek9-mz.124-24.T.bin"
+         - "no boot system flash bootflash/packages.conf"
+         - "boot system flash bootflash:csr1000v-universalk9.17.02.03.SPA.bin"
        save_when: always
 
 
 ## Remove the new image if needed
 
-   - name: Delete new IOS Image
-     ios_config:
-       commands:
+  ## - name: Delete new IOS Image
+    ## ios_config:
+      ## commands:
          - "delete flash:c1841-advipservicesk9-mz.151-4.M9.bin"
-       prompt:
+       ## prompt:
          - 'Delete filename'
          - 'Delete flash'
-       answer:
+       ## answer:
          - 'c1841-advipservicesk9-mz.151-4.M9.bin'
          - 'confirm'
 
@@ -136,7 +136,7 @@
    - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
      vars:
-       downgrade_ios_version: 15.1(4)M9
+       downgrade_ios_version: 17.02.03
 
      assert:
        that:
