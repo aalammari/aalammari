@@ -1,11 +1,11 @@
 ---
-#Ansible Playbook to upgrade Cisco IOS
+#Ansible Playbook to downgrade Cisco IOS
 
-- name: Upgrade CISCO IOS
+- name: Downgrade CISCO IOS
   hosts: 1841_TEST
 
   vars:
-    upgrade_ios_version: 12.4(24)T
+    downgrade_ios_version: 12.4(24)T
 
   tasks:
     - name: CHECK CURRENT VERSION
@@ -20,7 +20,7 @@
         msg:
         - "Image is not compliant and will be downgraded"
 
-      when: ansible_net_version != upgrade_ios_version
+      when: ansible_net_version != downgrade_ios_version
 
 ## Create backup folder for today's date
 
@@ -136,11 +136,11 @@
    - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
      vars:
-       upgrade_ios_version: 15.1(4)M9
+       downgrade_ios_version: 15.1(4)M9
 
      assert:
        that:
-         - upgrade_ios_version == ansible_net_version
+         - downgrade_ios_version == ansible_net_version
    - debug:
        msg:
-       - "Software Upgrade has been completed"
+       - "Software Downgrade has been completed"
