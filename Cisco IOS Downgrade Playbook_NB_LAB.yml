@@ -2,7 +2,7 @@
 #Ansible Playbook to downgrade Cisco IOS
 
 - name: Downgrade CISCO IOS
-  hosts: Cisco-Routers
+  hosts: Cisco_Routers
 
   vars:
     downgrade_ios_version: 17.02.03
@@ -44,7 +44,7 @@
 
 ## Backup Running Config
 
-- hosts: Cisco-Routers
+- hosts: Cisco_Routers
 
   tasks:
 ##   - name: Backup Running Config
