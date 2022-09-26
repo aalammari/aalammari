@@ -2,7 +2,7 @@
 #Ansible Playbook to downgrade Cisco IOS
 
 - name: Downgrade CISCO IOS
-  hosts: CM_USECASE
+  hosts: Cisco-Routers
 
   vars:
     downgrade_ios_version: 17.02.03
@@ -44,7 +44,7 @@
 
 ## Backup Running Config
 
-- hosts: CM_USECASE
+- hosts: Cisco-Routers
 
   tasks:
 ##   - name: Backup Running Config
@@ -65,7 +65,7 @@
 
 ## Copy software to target device
 
-##   - name: Copy Image // This could take up to 4 minutes
+- name: Copy Image // This could take up to 4 minutes
      cli_command:
       command: 'copy tftp: flash:'
        check_all: True
