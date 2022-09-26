@@ -65,7 +65,7 @@
 
 ## Copy software to target device
 ## This could take up to 4 minutes
-- name: Copy Image
+   - name: Copy Image
      cli_command:
       command: 'copy tftp: flash:'
        check_all: True
