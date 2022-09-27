@@ -78,7 +78,7 @@
          - 'csr1000v-mono-universalk9.17.02.03.SPA.bin'
          - 'csr1000v-mono-universalk9.17.02.03.SPA-TEST25.bin'
       vars:
-       ansible_command_timeout 1200
+       ansible_command_timeout: 1200
        
 ## Change the Boot Variable to the new image
 
