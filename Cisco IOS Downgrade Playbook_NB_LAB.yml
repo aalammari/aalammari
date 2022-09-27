@@ -65,7 +65,7 @@
 
 ## Copy software to target device
 
-  - name: Copy Image //This could take up to 4 minutes
+    - name: Copy Image //This could take up to 4 minutes
       cli_command
         command 'copy tftp:bootflash:csr1000v-mono-universalk9.17.02.03.SPA.bin bootflash:'
         check_all True
