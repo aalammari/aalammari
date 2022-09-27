@@ -67,7 +67,7 @@
 
     - name: Copy Image //This could take up to 4 minutes
       cli_command:
-        command: 'copy tftp: flash:'
+        command: 'copy tftp bootflash:'
         check_all: True
         prompt:
          - 'Address or name of remote host'
