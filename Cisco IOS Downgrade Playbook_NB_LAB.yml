@@ -76,7 +76,7 @@
         answer:
          - '172.16.11.242'
          - 'csr1000v-mono-universalk9.17.02.03.SPA.bin'
-         - 'csr1000v-mono-universalk9.17.02.03.SPA-TEST22.bin'
+         - 'csr1000v-mono-universalk9.17.02.03.SPA-TEST25.bin'
       vars:
        ansible_command_timeout: 1200
 
@@ -85,8 +85,8 @@
     - name: Change Boot Variable to the new image
       ios_config:
        commands:
-         - "no boot system flash bootflash/packages.conf"
-         - "boot system flash bootflash:csr1000v-universalk9.17.02.03.SPA.bin"
+         - "no boot system bootflash/packages.conf"
+         - "boot system bootflash:csr1000v-universalk9.17.02.03.SPA.bin"
        save_when: always
 
 
