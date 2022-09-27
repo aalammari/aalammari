@@ -64,26 +64,26 @@
 ##       save_when: always
 
 ## Copy software to target device
-## This could take up to 4 minutes
-   - name: Copy Image
-     cli_command:
-      command: 'copy tftp: flash:'
-       check_all: True
-       prompt:
+
+    - name: Copy Image //This could take up to 4 minutes
+      cli_command:
+        command: 'copy tftp: flash:'
+        check_all: True
+        prompt:
          - 'Address or name of remote host'
          - 'Source filename'
          - 'Destination filename'
-       answer:
+        answer:
          - '172.16.11.242'
          - 'csr1000v-mono-universalk9.17.02.03.SPA.bin'
          - 'csr1000v-mono-universalk9.17.02.03.SPA-TEST22.bin'
-     vars:
+      vars:
        ansible_command_timeout: 1200
 
 ## Change the Boot Variable to the new image
 
-   - name: Change Boot Variable to the new image
-     ios_config:
+    - name: Change Boot Variable to the new image
+      ios_config:
        commands:
          - "no boot system flash bootflash/packages.conf"
          - "boot system flash bootflash:csr1000v-universalk9.17.02.03.SPA.bin"
@@ -107,8 +107,8 @@
 
 ## Reload the Device
 
-   - name: Reload the Device
-     cli_command:
+    - name: Reload the Device
+      cli_command:
        command: reload
        prompt:
          - confirm
@@ -117,30 +117,31 @@
 
 ## Wait for the reachability to the device
 
-   - name: Wait for the Device to come back online
-     wait_for:
+    - name: Wait for the Device to come back online
+      wait_for:
        host: "{{ inventory_hostname }}"
        port: 22
        delay: 180
-     delegate_to: localhost
+      delegate_to: localhost
 
 ## Check Current image
 
-   - name: Check Image Version
-     ios_facts:
+    - name: Check Image Version
+      ios_facts:
 
-   - debug:
+    - debug:
        msg:
        - "Current version is {{ ansible_net_version }}"
 
-   - name: ASSERT THAT THE IOS VERSION IS CORRECT
+    - name: ASSERT THAT THE IOS VERSION IS CORRECT
 
-     vars:
+      vars:
        downgrade_ios_version: 17.02.03
 
-     assert:
+      assert:
        that:
          - downgrade_ios_version == ansible_net_version
-   - debug:
+    - debug:
        msg:
        - "Software Downgrade has been completed"
+       
