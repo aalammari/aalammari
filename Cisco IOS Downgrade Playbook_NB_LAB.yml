@@ -75,7 +75,7 @@
          - 'Destination filename'
         answer:
          - '172.16.11.242'
-         - 'bootflash/CM-TEST.txt'
+         - 'CM-TEST.txt'
          - 'CM-TEST.txt'
       vars:
        ansible_command_timeout: 1200
