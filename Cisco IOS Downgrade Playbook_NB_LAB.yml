@@ -75,8 +75,8 @@
          - 'Destination filename'
         answer:
          - '172.16.11.242'
-         - 'csr1000v-mono-universalk9.17.02.03.SPA.bin'
-         - 'csr1000v-mono-universalk9.17.02.03.SPA-TEST25.bin'
+         - 'CM-TEST.txt'
+         - 'CM-TEST.txt'
       vars:
        ansible_command_timeout: 1200
        
