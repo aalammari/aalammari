@@ -74,7 +74,7 @@
          - 'Source filename'
          - 'Destination filename'
         answer:
-         - '172.16.11.242'
+         - '10.150.150.151'
          - 'CM-TEST.txt'
          - 'CM-TEST.txt'
       vars:
