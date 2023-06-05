@@ -1,6 +1,6 @@
 ---
 
-- hosts: US-NYC-SW1
+- hosts: Cisco_Routers
   gather_facts: no
   tasks:
   - name: Configure Login Banner
