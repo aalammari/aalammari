@@ -1,5 +1,5 @@
 - name: "Cisco ACI Remove Filter Subject"
-  hosts: all
+  hosts: ROSH
   gather_facts: no
   connection: local
  
