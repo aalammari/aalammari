@@ -85,8 +85,8 @@
     - name: Change Boot Variable to the new image
       ios_config:
        commands:
-         - "no boot system bootflash:csr1000v-universalk9.17.02.03.SPA.bin"
-         - "boot system bootflash:csr1000v-mono-universalk9.17.03.08a.SPA.bin"
+         - "no boot system bootflash:csr1000v-mono-universalk9.17.03.05.SPA.bin"
+         - "boot system bootflash:csr1000v-universalk9.17.03.08a.SPA.bin"
        save_when: always
 
 
