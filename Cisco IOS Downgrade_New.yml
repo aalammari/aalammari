@@ -85,7 +85,7 @@
     - name: Change Boot Variable to the new image
       ios_config:
        commands:
-         - "no boot system bootflash:csr1000v-mono-universalk9.17.03.05.SPA.bin"
+         - "no boot system bootflash:csr1000v-universalk9.17.03.08a.SPA.bin"
          - "boot system bootflash:csr1000v-universalk9.17.02.03.SPA.bin"
        save_when: always
 
@@ -143,4 +143,4 @@
          - Downgrade_ios_version == ansible_net_version
     - debug:
        msg:
-       - "Software Downgrade has been completed"
+       - "Software Downgrade has been completed, Thank you for using NetBrain Ansible Agent"
