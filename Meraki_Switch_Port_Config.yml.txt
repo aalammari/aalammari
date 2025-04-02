@@ -33,4 +33,3 @@
         voiceVlan: "{{ voice_vlan }}"
         rstpEnabled: "{{ rstp_enabled }}"
         stpGuard: "{{ stp_guard }}"
-      
