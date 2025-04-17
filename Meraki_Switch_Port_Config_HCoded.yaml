@@ -1,0 +1,36 @@
+---
+- name: Configure switch ports for port 8 only
+  hosts: localhost
+  vars:
+    switch_serial: ""
+    voice_vlan: 700
+    rstp_enabled: true
+    stp_guard: "bpdu guard"
+  tasks: 
+  # This playbook configures the switch ports based on the Meraki API output
+    # - name: Configure switch Port1
+    #   cisco.meraki.devices_switch_ports:
+    #     meraki_suppress_logging: true
+    #     state: present
+    #     serial: "{{ switch_serial }}"
+    #     name: "Cameras"
+    #     type: access
+    #     vlan: 110
+    #     portId: 1
+    #     enabled: true
+
+
+    - name: Configure switch Port8
+      cisco.meraki.devices_switch_ports:
+        meraki_api_key: "8ff4907cb90a2266aa1448923563e0b5fb6b4776"
+        meraki_suppress_logging: true
+        state: present         
+        serial: "Q2AX-BXRL-7F3Q"
+        name: "User Access"
+        type: access
+        vlan: 113
+        portId: 8
+        enabled: true
+        voiceVlan: "{{ voice_vlan }}"
+        rstpEnabled: "{{ rstp_enabled }}"
+        stpGuard: "{{ stp_guard }}"
