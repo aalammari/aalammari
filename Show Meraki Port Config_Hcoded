@@ -1,0 +1,17 @@
+---
+- name: Verify Meraki Switch Port Configuration
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+  #  - secrets.yml  # Contains 'meraki_api_key'
+  tasks:
+    - name: Retrieve switch port information
+      cisco.meraki.devices_switch_ports_info:
+        meraki_api_key: "8ff4907cb90a2266aa1448923563e0b5fb6b4776"
+        serial: "Q2AX-BXRL-7F3Q"
+        portId: "8"
+      register: port_info
+
+    - name: Display port configuration
+      debug:
+        var: port_info
