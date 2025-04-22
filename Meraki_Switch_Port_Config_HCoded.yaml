@@ -28,7 +28,7 @@
         serial: "Q2AX-BXRL-7F3Q"
         name: "User Access"
         type: access
-        vlan: 113
+        vlan: 114
         portId: 8
         enabled: true
         voiceVlan: "{{ voice_vlan }}"
